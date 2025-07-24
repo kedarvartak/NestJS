@@ -8,8 +8,6 @@ It's built with TypeScript, which helps you write cleaner and more reliable code
 
 At its heart, NestJS organizes your code into a clear and logical structure. The main building blocks are **Modules**, **Controllers**, and **Providers** (often called Services).
 
-![NestJS Architecture](../Images/nest-architecture.png)
-
 ### How it Works:
 
 1.  **Controllers**: These handle incoming requests from users. When a user goes to a specific URL in your application, a controller is responsible for receiving that request and deciding what to do with it.
@@ -19,4 +17,31 @@ At its heart, NestJS organizes your code into a clear and logical structure. The
 3.  **Modules**: Modules are a way to group related controllers and providers together. Think of them as containers for different parts of your application. For example, you might have a `UsersModule` that contains the `UsersController` and `UsersService`. This helps keep your application organized as it grows.
 
 This modular structure makes NestJS applications scalable and easy to manage.
+
+## Why Choose NestJS?
+
+*   **Structured and Organized**: NestJS enforces a strong structure, which makes it easier to build and maintain large applications.
+*   **TypeScript Support**: It fully supports TypeScript, helping you catch errors early and write more reliable code.
+*   **Scalable**: The modular architecture makes it easy to scale your application as it grows.
+*   **Good for Teamwork**: The clear structure makes it easier for teams to work together on the same project.
+
+## Basic Request Flow
+
+Here is a simple diagram showing how a request from a user is handled in a NestJS application:
+
+```mermaid
+graph TD
+    A["Client <br> (Browser/App)"] --> B{NestJS App};
+    B --> C["Controller <br> (Finds the right door)"];
+    C --> D["Service <br> (Handles the logic)"];
+    D --> E["Database / <br> Other APIs"];
+    E --> D;
+    D --> C;
+    C --> A;
+    subgraph "Your Application"
+        B
+        C
+        D
+    end
+```
 
