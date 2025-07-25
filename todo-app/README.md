@@ -68,6 +68,26 @@ curl -X GET http://localhost:3000/todo \
 -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 
+### 5. Get a Specific To-Do Item
+```bash
+curl -X GET http://localhost:3000/todo/1 \
+-H "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+
+### 6. Update a To-Do Item
+```bash
+curl -X PATCH http://localhost:3000/todo/1 \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer YOUR_TOKEN_HERE" \
+-d '{"completed": true}'
+```
+
+### 7. Delete a To-Do Item
+```bash
+curl -X DELETE http://localhost:3000/todo/1 \
+-H "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+
 ## The entire process
 
 The development of this application followed a structured, incremental process:
