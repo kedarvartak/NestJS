@@ -1,0 +1,12 @@
+{
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "terminal.integrated.defaultProfile.linux": "bash (2)",
+  "terminal.integrated.profiles.linux": {
+    "bash (2)": {
+      "path": "/usr/bin/bash"
+  }
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "/usr/bin/docker"
+  }
+}
