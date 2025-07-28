@@ -4,7 +4,6 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Todo } from './entities/todo.entity';
 import { Repository } from 'typeorm';
 
-// mock repo
 const mockTodoRepository = {
   create: jest.fn(),
   save: jest.fn(),
@@ -40,13 +39,11 @@ describe('TodoService', () => {
       const createTodoDto = { title: 'Test Todo', description: 'A test description' };
       const expectedTodo = { id: 1, completed: false, ...createTodoDto };
 
-      // We tell our mock what to do when its methods are called
       mockTodoRepository.create.mockReturnValue(expectedTodo);
       mockTodoRepository.save.mockResolvedValue(expectedTodo);
 
       const result = await service.create(createTodoDto);
 
-      // We assert that the methods were called correctly and the result is what we expect
       expect(mockTodoRepository.create).toHaveBeenCalledWith(createTodoDto);
       expect(mockTodoRepository.save).toHaveBeenCalledWith(expectedTodo);
       expect(result).toEqual(expectedTodo);
