@@ -58,7 +58,7 @@ docker run -d -p 3000:3000 --name my-todo-app todo-app
 - `-d`: Detached mode.
 - `--name my-todo-app`: Assigns a custom name to the container.
 
-## Running with Data Persistence -> Volumes
+## Running with Data Persistence - Named Volumes
 
 To ensure your `todo.db` data is not lost when the container stops, run it with a named volume.
 
