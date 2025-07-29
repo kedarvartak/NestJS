@@ -8,8 +8,6 @@ This file provides a quick reference for the most common Docker commands used to
 
 ## Building the Image
 
-## Docker Build Overview
-
 To create a Docker image from your app, use:
 
 ```bash
