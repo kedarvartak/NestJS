@@ -3,7 +3,7 @@
   "terminal.integrated.defaultProfile.linux": "bash (2)",
   "terminal.integrated.profiles.linux": {
     "bash (2)": {
-      "path": "/usr/bin/bash"
+      "path": "/usr/bin/sh"
   }
   },
   "terminal.integrated.env.linux": {
