@@ -4,17 +4,36 @@ This file provides a quick reference for the most common Docker commands used to
 
 **Note for Linux Users:** Depending on your setup, you may need to prefix all `docker` commands with `sudo`.
 
----
+
 
 ## Building the Image
 
-This command builds the Docker image from the `Dockerfile` in the current directory and tags it with the name `todo-app`.
+## Docker Build Overview
+
+To create a Docker image from your app, use:
 
 ```bash
 docker build -t todo-app .
 ```
 
----
+* `-t todo-app` tags the image with a human-readable name.
+* `.` specifies the current directory as the build context.
+
+### What if you skip `-t`?
+
+If you run:
+
+```bash
+docker build .
+```
+
+Docker will still build the image, but:
+
+* It won’t have a meaningful name.
+* You'll need to reference it using its **image ID** (e.g., `docker run <image-id>`), which is harder to manage.
+
+**Always use `-t`** to simplify image management, versioning (`-t todo-app:v1`), and pushing to a registry.
+
 
 ## Running the Container
 
@@ -46,7 +65,7 @@ docker run -d -p 3000:3000 -v todo-data:/usr/src/app/dist --name my-todo-app tod
 ```
 - `-v todo-data:/usr/src/app/dist`: Creates a named volume `todo-data` and mounts it to the `dist` directory inside the container, persisting the database file.
 
----
+
 
 ## Managing Containers
 
@@ -88,7 +107,7 @@ Deletes a **stopped** container. You cannot remove a running container without f
 docker rm my-todo-app
 ```
 
----
+
 
 ## Managing Volumes
 
