@@ -41,6 +41,8 @@ Docker will still build the image, but:
 
 This command runs the container in the foreground, which is useful for debugging as logs are printed directly to your terminal.
 
+![docker-build-cmd](run-cmd.png)
+
 ```bash
 docker run -p 3000:3000 todo-app
 ```
