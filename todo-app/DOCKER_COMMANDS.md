@@ -8,7 +8,7 @@ This file provides a quick reference for the most common Docker commands used to
 
 ## Building the Image
 
-![docker-build-cmd](/dockerbuild.png)
+![docker-build-cmd](dockerbuild.png)
 
 To create a Docker image from your app, use:
 
