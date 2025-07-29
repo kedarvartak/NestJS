@@ -1,4 +1,4 @@
-# Docker Commands for the NestJS Todo App
+# Docker Commands 
 
 This file provides a quick reference for the most common Docker commands used to build, run, and manage this application.
 
@@ -7,6 +7,8 @@ This file provides a quick reference for the most common Docker commands used to
 
 
 ## Building the Image
+
+![docker-build-cmd](/dockerbuild.png)
 
 To create a Docker image from your app, use:
 
