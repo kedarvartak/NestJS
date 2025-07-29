@@ -128,3 +128,13 @@ Deletes a volume. **Warning: This will permanently delete the data stored in the
 ```bash
 docker volume rm todo-data
 ```
+Certainly. Here's the explanation of Docker volume types in a structured, paragraph-based format, suitable for a README or documentation:
+
+## Types of Docker Volumes
+
+Docker provides two main types of volumes for persisting data between container runs: named volumes and bind mounts.
+
+**Named volumes** are managed entirely by Docker. When you create a named volume, Docker stores it in a designated location on the host machine, abstracting away the actual path. This makes named volumes portable, as you do not need to worry about differences in host file system structures across environments. They are ideal for production environments where you want Docker to manage data persistently and cleanly. In practice, a named volume can be attached to a container using the `-v` flag in the format `-v volume-name:/container/path`. For example, running a container with `-v todo-data:/usr/src/app/dist` mounts a Docker-managed volume named `todo-data` to the `/usr/src/app/dist` directory inside the container. If the volume does not exist, Docker automatically creates it.
+
+**Bind mounts**, on the other hand, map a specific file or directory on the host machine directly to a path inside the container. This method gives you full control over the location of the data on the host. Bind mounts are particularly useful in development environments, as any changes made to the files in the mounted directory on the host are immediately reflected in the container. This is beneficial for tasks such as live editing, debugging, or using file watchers. A common usage would look like `-v $(pwd)/dist:/usr/src/app/dist`, which mounts the `dist` folder from your current working directory into the container at the specified path.
+
